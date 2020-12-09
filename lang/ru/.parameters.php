@@ -1,0 +1,32 @@
+<?
+$MESS ['MFP_TITLE'] = "Заголовок формы";
+$MESS ['MFP_TITLE_DEFAULT'] = "Обратная связь";
+$MESS ['MFP_CAPTCHA'] = "Использовать защиту от автоматических сообщений (CAPTCHA) для неавторизованных пользователей";
+$MESS ['MFP_CAPTCHA_NONE'] = "Не использовать";
+$MESS ['MFP_CAPTCHA_BX'] = "Встроенная 1С-Битрикс Captcha";
+$MESS ['MFP_CAPTCHA_GOOGLE'] = "reCAPTCHA v2";
+$MESS ['MFP_OK_MESSAGE'] = "Сообщение, выводимое пользователю после отправки";
+$MESS ['MFP_OK_TEXT'] = "Спасибо, ваше сообщение принято.";
+$MESS ['MFP_EMAIL_TO'] = "E-mail, на который будет отправлено письмо";
+$MESS ['MFP_GOOGLE_PUBLIC_KEY'] = "Public key";
+$MESS ['MFP_GOOGLE_SECRET_KEY'] = "Secret key";
+$MESS ['MFP_DISPLAY_FIELDS'] = "Поля формы";
+$MESS ['MFP_REQUIRED_FIELDS'] = "Обязательные поля для заполнения";
+$MESS ['MFP_ALL_REQ'] = "(все необязательные)";
+$MESS ['MFP_NAME'] = "Имя";
+$MESS ['MFP_PHONE'] = "Телефон";
+$MESS ['MFP_MESSAGE'] = "Сообщение";
+$MESS ['MFP_EMAIL_TEMPLATES'] = "Почтовые шаблоны для отправки письма";
+$MESS ['MFP_SUBMIT'] = "Текст кнопки отправить";
+$MESS ['MFP_ATTR_FORM_1'] = "Дополнительный атрибут 1";
+$MESS ['MFP_ATTR_FORM_2'] = "Дополнительный атрибут 2";
+$MESS ['MFP_ATTR_FORM_3'] = "Дополнительный атрибут 3";
+$MESS ['MFP_SEND_MESSAGE'] = "Уведомлять пользователя";
+$MESS ['MFP_MESSAGE_TITLE'] = "Тема письма";
+$MESS ['MFP_MESSAGE_TITLE_DEFAULT'] = "Ваша заявка принята";
+$MESS ['MFP_MESSAGE_TEXT'] = "Шаблон письма";
+$MESS ['MFP_MESSAGE_TEXT_DEFAULT'] = "Спасибо за проявленный интерес. Наш менеджер свяжется с вами в ближайшее время";
+$MESS ['MFP_GROUP_ADDITIONALLY'] = "Дополнительно";
+$MESS ['MFP_GROUP_FEEDBACK'] = "Обратная связь";
+$MESS ['MFP_GROUP_GOOGLE'] = "Google ключи";
+?>
