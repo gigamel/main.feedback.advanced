@@ -22,11 +22,15 @@ $MESS ['MFP_ATTR_FORM_1'] = "Дополнительный атрибут 1";
 $MESS ['MFP_ATTR_FORM_2'] = "Дополнительный атрибут 2";
 $MESS ['MFP_ATTR_FORM_3'] = "Дополнительный атрибут 3";
 $MESS ['MFP_SEND_MESSAGE'] = "Уведомлять пользователя";
+$MESS ['MFP_SEND_ADMIN_MESSAGE'] = "Использовать для отправки письма администратору вместо почтового шаблона";
 $MESS ['MFP_MESSAGE_TITLE'] = "Тема письма";
 $MESS ['MFP_MESSAGE_TITLE_DEFAULT'] = "Ваша заявка принята";
+$MESS ['MFP_ADMIN_TITLE_DEFAULT'] = "Заявка с сайта";
 $MESS ['MFP_MESSAGE_TEXT'] = "Шаблон письма";
 $MESS ['MFP_MESSAGE_TEXT_DEFAULT'] = "Спасибо за проявленный интерес. Наш менеджер свяжется с вами в ближайшее время";
+$MESS ['MFP_ADMIN_TEXT_DEFAULT'] = "Пользователь проявил интерес к услуге/товару";
 $MESS ['MFP_GROUP_ADDITIONALLY'] = "Дополнительно";
 $MESS ['MFP_GROUP_FEEDBACK'] = "Обратная связь";
+$MESS ['MFP_GROUP_ADMIN_FEEDBACK'] = "Для администратора";
 $MESS ['MFP_GROUP_GOOGLE'] = "Google ключи";
 ?>

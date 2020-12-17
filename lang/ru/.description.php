@@ -1,4 +1,4 @@
 <?
-$MESS ['MAIN_FEEDBACK_COMPONENT_NAME'] = "Расширенная форма обратной связи";
-$MESS ['MAIN_FEEDBACK_COMPONENT_DESCR'] = "Форма для отправки сообщений с сайта на E-mail";
+$MESS ['MAIN_FEEDBACK_COMPONENT_NAME'] = "Paremo. ‘орма обратной св€зи";
+$MESS ['MAIN_FEEDBACK_COMPONENT_DESCR'] = "Paremo. ‘орма дл€ отправки сообщений с сайта на E-mail";
 ?>

@@ -55,8 +55,14 @@ if($arParams["OK_TEXT"] == '')
 $arParams["SEND_USER_MESSAGE"] = isset($arParams["SEND_USER_MESSAGE"]) ? $arParams["SEND_USER_MESSAGE"] : "N";
 $arParams["SEND_USER_MESSAGE"] = ($arParams["SEND_USER_MESSAGE"] == "Y") ? $arParams["SEND_USER_MESSAGE"] : "N";
 
+$arParams["SEND_ADMIN_MESSAGE"] = isset($arParams["SEND_ADMIN_MESSAGE"]) ? $arParams["SEND_ADMIN_MESSAGE"] : "N";
+$arParams["SEND_ADMIN_MESSAGE"] = ($arParams["SEND_ADMIN_MESSAGE"] == "Y") ? $arParams["SEND_ADMIN_MESSAGE"] : "N";
+
 $arParams["SEND_MESSAGE_TITLE"] = is_string($arParams["SEND_MESSAGE_TITLE"]) ? $arParams["SEND_MESSAGE_TITLE"] : "";
 $arParams["SEND_MESSAGE_TEXT"] = is_string($arParams["SEND_MESSAGE_TEXT"]) ? $arParams["SEND_MESSAGE_TEXT"] : "";
+
+$arParams["SEND_ADMIN_TITLE"] = is_string($arParams["SEND_ADMIN_TITLE"]) ? $arParams["SEND_ADMIN_TITLE"] : "";
+$arParams["SEND_ADMIN_TEXT"] = is_string($arParams["SEND_ADMIN_TEXT"]) ? $arParams["SEND_ADMIN_TEXT"] : "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_POST["PARAMS_HASH"]) || $arResult["PARAMS_HASH"] === $_POST["PARAMS_HASH"]))
 {
@@ -130,20 +136,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] <> '' && (!isset($_P
 				"PHONE" => $_POST["user_phone"],
 			);
 
-			if(!empty($arParams["EVENT_MESSAGE_ID"]))
-			{
-				foreach($arParams["EVENT_MESSAGE_ID"] as $v)
-					if(IntVal($v) > 0)
-						CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields, "N", IntVal($v));
+            if ($arParams["SEND_ADMIN_MESSAGE"] == "Y") {
+			    if (!empty(trim($arParams["SEND_ADMIN_TITLE"])) && !empty(trim($arParams["SEND_ADMIN_TEXT"]))
+                    && filter_var($arParams["EMAIL_TO"], FILTER_VALIDATE_EMAIL)) {
+					foreach ($arFields as $key => $value) {
+						$arParams["SEND_ADMIN_TEXT"] = str_replace("#{$key}#", $value, $arParams["SEND_ADMIN_TEXT"]);
+					}
+					
+				    mail($arParams["EMAIL_TO"], $arParams["SEND_ADMIN_TITLE"], $arParams["SEND_ADMIN_TEXT"]);
+			    }
+			} else {
+			    if(!empty($arParams["EVENT_MESSAGE_ID"]))
+			    {
+				    foreach($arParams["EVENT_MESSAGE_ID"] as $v)
+					    if(IntVal($v) > 0)
+						    CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields, "N", IntVal($v));
+			    }
+			    else
+				    CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
 			}
-			else
-				CEvent::Send($arParams["EVENT_NAME"], SITE_ID, $arFields);
+			
 			$_SESSION["MF_NAME"] = htmlspecialcharsbx($_POST["user_name"]);
 			$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
 			$_SESSION["MF_PHONE"] = htmlspecialcharsbx($_POST["user_phone"]);
 			
 			if ($arParams["SEND_USER_MESSAGE"] == "Y" && !empty(trim($arParams["SEND_MESSAGE_TITLE"]))
                 && !empty(trim($arParams["SEND_MESSAGE_TEXT"])) && filter_var($_POST["user_email"], FILTER_VALIDATE_EMAIL)) {
+                foreach ($arFields as $key => $value) {
+                    $arParams["SEND_MESSAGE_TEXT"] = str_replace("#{$key}#", $value, $arParams["SEND_MESSAGE_TEXT"]);
+                }
+				
 				mail($_POST["user_email"], $arParams["SEND_MESSAGE_TITLE"], $arParams["SEND_MESSAGE_TEXT"]);
 			}
 			

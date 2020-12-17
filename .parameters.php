@@ -19,6 +19,9 @@ $arComponentParameters = array(
 	    "FEEDBACK_SETTINGS" => Array(
 		    "NAME" => GetMessage("MFP_GROUP_FEEDBACK")
 		),
+	    "FEEDBACK_ADMIN_SETTINGS" => Array(
+		    "NAME" => GetMessage("MFP_GROUP_ADMIN_FEEDBACK")
+		),
 	    "ADDITIONALLY_SETTINGS" => Array(
 		    "NAME" => GetMessage("MFP_GROUP_ADDITIONALLY")
 		),
@@ -113,6 +116,24 @@ $arComponentParameters = array(
 			"TYPE" => "STRING",
 			"DEFAULT" => GetMessage("MFP_MESSAGE_TEXT_DEFAULT"), 
 			"PARENT" => "FEEDBACK_SETTINGS",
+		),
+		"SEND_ADMIN_MESSAGE" => Array(
+			"NAME" => GetMessage("MFP_SEND_ADMIN_MESSAGE"), 
+			"TYPE" => "CHECKBOX",
+			"DEFAULT" => "N", 
+			"PARENT" => "FEEDBACK_ADMIN_SETTINGS",
+		),
+		"SEND_ADMIN_TITLE" => Array(
+			"NAME" => GetMessage("MFP_MESSAGE_TITLE"), 
+			"TYPE" => "STRING",
+			"DEFAULT" => GetMessage("MFP_ADMIN_TITLE_DEFAULT"), 
+			"PARENT" => "FEEDBACK_ADMIN_SETTINGS",
+		),
+		"SEND_ADMIN_TEXT" => Array(
+			"NAME" => GetMessage("MFP_MESSAGE_TEXT"), 
+			"TYPE" => "STRING",
+			"DEFAULT" => GetMessage("MFP_ADMIN_TEXT_DEFAULT"), 
+			"PARENT" => "FEEDBACK_ADMIN_SETTINGS",
 		),
 		"ATTR_FORM_1" => Array(
 			"NAME" => GetMessage("MFP_ATTR_FORM_1"),
